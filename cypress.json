@@ -1,0 +1,25 @@
+{
+  "ScreenshotsFolder": "cypress/screenshots",
+  "videossFolder": "cypress/videos/testExecutionsVideos",
+  "reporter": "cypress-mochawesome-reporter",
+  "reporterOptions": {
+    "reportDir": "cypress/reports",
+    "charts": true,
+    "reportPageTitle": "custom-title"
+  },
+
+  "env": {
+    "CUSTOMER_URL":"https://customer-qa.edgelogistics.com/login",
+    "CYPRESS_MAILSLURP_API_KEY":"8fa3f75090e4b7ba8231cf846f02e6f98cfef13f08d67aeaba23b539ad892f57",
+    "inboxId":"e2776c57-cb12-4e72-9b57-f8b9fe1bdf1d"
+
+  },
+  "projectId": "2g2zwd",
+  "defaultCommandTimeout": 12000,
+  "pageLoadTimeout": 30000,
+  "viewportWidth": 1700,
+  "viewportHeight": 937,
+  "responseTimeout": 30000,
+  "requestTimeout": 30000,
+  "failOnStatusCode": false
+}

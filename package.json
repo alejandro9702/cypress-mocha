@@ -1,0 +1,31 @@
+{
+  "name": "edge-customer-portal",
+  "version": "1.0.0",
+  "description": "Automated tests to Edge customer portal (LEAN TECH) ",
+  "main": "index.js",
+  "scripts": {
+    "open": "cypress open",
+    "clean:reports": "if exist cypress\\reports rmdir /s/q cypress\\reports",
+    "pretest": "npm run clean:reports",
+    "scripts": "cypress run",
+    "combine-reports": "mochawesome-mergecypress/reports/*.json > cypress/reports/report.json",
+    "generate-report": "marge cypress/reports/report.json -f report -o cypress/reports",
+    "posttest": "npm run combine-reports && npm run generate-report",
+    "test" : "npm run scripts",
+    "dashboard":"cypress run --spec 'cypress/integration/login.spec.js' --browser chrome record --key 3c6b636a-5cfe-432b-879a-38374583fa71"
+  },
+  "author": "Alejandro Restrepo Muñoz",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^8.7.0"
+  },
+  "devDependencies": {
+    "cypress-mochawesome-reporter": "^2.3.0",
+    "cypress-xpath": "^1.6.2",
+    "faker": "^5.5.3",
+    "mailslurp-client": "^15.0.2",
+    "mochawesome": "^7.0.1",
+    "mochawesome-merge": "^4.2.0",
+    "mochawesome-report-generator": "^6.0.1"
+  }
+}
