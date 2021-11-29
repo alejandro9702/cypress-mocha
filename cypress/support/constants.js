@@ -10,7 +10,7 @@ export const LOGIN_MESSAGES = {
 };
 
 export const PATHS = {
-  PATH_HOME_QUOTES: "/main/quotes",
+  PATH_DASBOARD_CUSTOMER: "/dashboard",
   RECOVER_PASSWORD_PATH:"https://quote-b-qa.edgelogistics.com/api/v1/auth/forgot-password"
 }
 
