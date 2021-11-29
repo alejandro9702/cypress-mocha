@@ -86,4 +86,5 @@ For this is necesary the key of the project on the dashboard
 -   Open the project with Visual Studio Code IDE
 -   Open the terminal
 -   Type the command  **cypress run --record --key xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx**. By default it is executed using the Electron browser, but if the instruction  **--browser chrome**  (or any other supported browser) is added to the command after the "key" instruction, it will run in such browser
+ **or just npm run test**
 -   And enjoy it!

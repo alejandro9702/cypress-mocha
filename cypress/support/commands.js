@@ -1,13 +1,22 @@
 import LoginPage from "./pages/LoginPage";
 
-// const { MailSlurp } = require("mailslurp-client");
 
-const apiKey = Cypress.env("CYPRESS_MAILSLURP_API_KEY");
-// const mailslurp = new MailSlurp({ apiKey });
 
 const loginPage = new LoginPage();
 
 Cypress.Commands.add("navigateToQuotesPortal", () => {
   cy.visit(Cypress.env('CUSTOMER_URL'));
-//   loginPage.loginFormValidate();
+  loginPage.loginFormValidate();
 });
+
+Cypress.Commands.add("fillSignInForm", (email, password) => {
+  loginPage.typeEmailLogin(email);
+  loginPage.typePasswordLogin(password);
+});
+
+Cypress.Commands.add("clickSubmit",
+  { prevSubject: "true" },
+  (subject, options) => {
+    subject.click();
+  }
+);

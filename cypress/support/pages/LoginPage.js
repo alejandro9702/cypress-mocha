@@ -14,33 +14,31 @@ const TEXT_INFO_RECOVER_PASSWORD =
 
 class LoginPage {
   elements = {
-    emailInput: () => cy.xpath("//input[@id='loginFormEmailInput']"),
-    passwordInput: () => cy.xpath("//input[@id='loginFormPasswordInput']"),
-    signButton: () => cy.xpath("//button//span[text()='Login']"),
-    passwordEye: () => cy.get(".MuiButtonBase-root.jss14  svg"),
+    emailInput: () => cy.get("#email"),
+    passwordInput: () => cy.get("#password"),
+    signInButton: () => cy.xpath("//button[text()='Login']"),
+    passwordEye: () => cy.xpath("//button[@aria-label='toggle password visibility']"),
     welcomeTitle: () => cy.xpath("//h1[contains(text(),'Welcome!')]"),
-    forgotPasswordLink: () => cy.xpath("//p[text()='Forgot password']"),
+    forgotPasswordLink: () => cy.xpath("//a[text()='Forgot password']"),
     forgotPasswordTitleForm: () =>
-      cy.xpath("//p[contains(text(),'Forgot Password')]"),
+      cy.xpath("//h1[contains(text(),'Recovery Account')]"),
     forgotPasswordInfoForm: () =>
-      cy.xpath(
-        "//p[contains(text(),'Please enter your email address.We will send you a')]"
-      ),
+      cy.xpath("//p[contains(text(),'Please type account's email')]"),
     recoverPasswordInput: () =>
       cy.xpath("//input[@id='forgotPasswordEmailInput']"),
     recoverPasswordButton: () =>
       cy.xpath("//button//span[text()='Recover password']"),
     cancelRecoverPasswordButton: () =>
       cy.xpath("//button//span[text()='Cancel']"),
-    needHelpLink: () => cy.get("p[title='Need help?']"),
+    needHelpLink: () => cy.xpath("//button[text()='Need help?']"),
     alertMessageLogin: () =>
       cy.xpath("//div[@id='snackbar']//div[@class='MuiAlert-message']"),
     supportSubtitle: () => cy.get('[title="Please contact us at"]'),
     supportTitle: () => cy.get('[title="Need Help?"]'),
     emailIsRequiredMessage: () =>
-      cy.xpath("//p[@id='loginFormEmailInput-helper-text']"),
+      cy.xpath("//p[contains(text(),'Username is required')]"),
     passwrodIsRequiredMessage: () =>
-      cy.xpath("//p[@id='loginFormPasswordInput-helper-text']"),
+      cy.xpath("//p[contains(text(),'Password is required')]"),
   };
 
   /**login form validation before start the tests */
@@ -48,7 +46,7 @@ class LoginPage {
     this.elements.welcomeTitle().contains(TITLE_WELCOME).should("be.visible");
     this.elements.emailInput().should("be.visible");
     this.elements.passwordInput().should("be.visible");
-    this.elements.signButton().should("be.visible");
+    this.elements.signInButton().should("be.visible");
     this.elements.passwordEye().should("be.visible");
     this.elements.forgotPasswordLink().should("be.visible");
     this.elements.needHelpLink().should("be.visible");
@@ -58,7 +56,7 @@ class LoginPage {
     let emailString = email === "" ? FAKE_EMAIL : email;
     this.elements
       .emailInput()
-      .should("have.attr", "placeholder", "Email")
+      .should("have.attr", "placeholder", "Username")
       .type(emailString);
   }
 
