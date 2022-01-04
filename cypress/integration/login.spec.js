@@ -1,7 +1,6 @@
 /// <reference types="cypress" />
 
 import LoginPage from "../support/pages/LoginPage";
-const loginPage = new LoginPage();
 import { LOGIN_MESSAGES,PATHS } from '../support/constants';
 
 
@@ -17,7 +16,7 @@ describe("Customer portal Login", () => {
         cy.navigateToQuotesPortal();
     }); 
     it.only("When the user tries to signin to customer portal as a admin user", function (){
-      cy.fillSignInForm(this.data[0].email, this.data[0].password).clickSubmit(loginPage.elements.signInButton());
+      cy.fillSignInForm(this.data[0].email, this.data[0].password).clickSubmit(LoginPage.elements.signInButton());
     });
     it.only("Then the user should navigate to home page",() => {
       cy.url().should("include", PATHS.PATH_DASBOARD_CUSTOMER);
