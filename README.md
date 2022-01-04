@@ -3,7 +3,6 @@
 This is an example of the Automation just using Cypress and mocha
 also contains an example of how to implement a Page object model pattern
 
-
 ### Tools used to create this project:
 
 -   Cypress
