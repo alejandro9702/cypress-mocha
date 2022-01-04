@@ -1,17 +1,13 @@
-# EDGE LOGISTICS (CUSTOMER) AUTOMATION PROJECT
+# CYPRESS AUTOMATION BASIC PROJECT
 
-This is an example of the Automation using Cypress for the EDGE CUSTOMER Portal(LEAN TECH)
-
-### This project contains the automation of the Applicant portal, following it's different flows
-
-This automation was created using a combination between the POM (Page Obect Model) design pattern AND commands, also the Cypress Framework (version 8.6.0).the project is configurated with Cypress Dashboard and docker images(through yml file) at the same time, so when the tests are executed their evidences can be saved as screeshots or videos, for which is necessary to have the correct key (more details in the Cypress Dashboard section).Also, the project is configurated with Browserstack and it can be executed on the Chrome, Firefox and even others, by adding any new browsers to the broserstack.json file.
+This is an example of the Automation just using Cypress and mocha
+also contains an example of how to implement a Page object model pattern
 
 ### Tools used to create this project:
 
 -   Cypress
--   Browserstack
 -   Javascript
--   docker images
+-   mocha
 
 ## Description of the Packages in this project
 
@@ -37,9 +33,6 @@ The support folder contains common files (reusable code, global variables, etc.)
 
 Contains the .js files where the mapping of the web pages elements takes place. Such mappings are done by CSS selectors, like xpath, id, class, etc.
 
-##### StepDefinitions:
-
-In this folder, the call to each method declared in the page objects classes can be found.
 
 ### Other files:
 
@@ -47,7 +40,6 @@ In this folder, the call to each method declared in the page objects classes can
 -   support.index: This file contains global configurations to modify Cypress. It's been used to add the xpath configuration because sometime is necessary to map objects with their xpath.
 -   support.constants: this file contains all those messages, titles, path urls, etc. necessary constants
 -   Gitignore: In this file are excluded all files that are unnecessary or not recommended to upload on the project's remote repository.
--   Browserstack.json: This file has the browserstack configuration, with the browsers in which the project can be executed. And, also run settings, which include: the Cypress config file path, Cypress version, project name, build name and parallel runs.
 -   Cypress.json: In this file is the cypress configuration, for example viewport or projectId. This configuration is necessary to execute Cypress in the dashboard.
 -   Package.json: This is a configuration file, containing data like the project's name, scripts that can be used and versions of components like mochawesome, xpath, cypress, etc.
 -   reports.js: contain all configuration to modify the report file
@@ -68,15 +60,8 @@ In this folder, the call to each method declared in the page objects classes can
 
 -   Open the project with the Visual Studio Code IDE
 -   Open the terminal
--   To run the project locally using Cypress, type the command  **npm run cypress:open**
+-   To run the project locally using Cypress, type the command  **npm run open**
 -   On the emergent Cypress window, select the feature to execute
--   And enjoy it!
-
-### How to execute with Cypress on Browserstack?
-
--   Open the project with Visual Studio Code IDE
--   Open the terminal
--   Type the command  **npx browserstack-cypress run --sync**
 -   And enjoy it!
 
 ### How to execute on the Cypress Dashboard?
